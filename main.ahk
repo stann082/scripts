@@ -4,6 +4,11 @@
 ^!3::runDiffConsole(3)
 ^!4::FileRemoveDir, C:\temp\clipboard-log, 1
 
+; Chrome: Ctrl+W deletes previous word like Vim (close tabs with Ctrl+F4 instead)
+#IfWinActive ahk_exe chrome.exe
+^w::Send, ^{Backspace}
+#IfWinActive
+
 ; Services
 #Persistent 
 OnClipboardChange:
