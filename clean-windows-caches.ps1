@@ -267,5 +267,5 @@ if ($WhatIfPreference) {
     Write-Host ("Preview only, nothing changed. Estimated reclaimable: {0} (excludes DISM/restore-point savings)" -f (Format-Size $est))
 } else {
     $freeAfter = (Get-PSDrive -Name C).Free
-    Write-Host ("Free on C: after: {0}   Freed: {1}" -f (Format-Size $freeAfter), (Format-Size ([math]::Max(0, $freeAfter - $freeBefore))))
+    Write-Host ("Free on C: after: {0}   Freed: {1}" -f (Format-Size $freeAfter), (Format-Size ([math]::Max([long]0, $freeAfter - $freeBefore))))
 }
